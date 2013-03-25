@@ -71,10 +71,17 @@ public class MenuController : MonoBehaviour {
 		
 		if (Input.GetButtonUp("Fire1"))
 		{
-			if (Physics.Raycast(ray, out hit) && hit.transform.name == "Exit")
+			if (Physics.Raycast(ray, out hit))
 			{
 				GameObject.Find("ClickSound").GetComponent<AudioSource>().Play();
-				Application.Quit();
+				if ( hit.transform.name == "Exit")
+				{
+					Application.Quit();
+				}
+				if (hit.transform.name == "NewGame")
+				{
+					Application.LoadLevel(1);
+				}
 			}
 		}
 		
