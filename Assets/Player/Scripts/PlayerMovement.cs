@@ -28,4 +28,5 @@ public class PlayerMovement : MonoBehaviour {
 			gameObject.transform.Translate(new Vector3(0, 0, -1));	
 		}
 	}
+	
 }
